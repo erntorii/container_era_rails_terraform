@@ -3,6 +3,7 @@
     "name": "rails_webapp",
     "image": "650711581682.dkr.ecr.ap-northeast-1.amazonaws.com/rails_webapp:latest",
     "cpu": 333,
+    "memory": null,
     "memoryReservation": 600,
     "essential": true,
     "portMappings": [
@@ -12,7 +13,7 @@
         "containerPort": 3000
       }
     ],
-    "command": ["bundle", "exec", "pumactl", "start"],
+    "command": ["bundle", "exec", "puma", "-C", "config/puma.rb"],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
